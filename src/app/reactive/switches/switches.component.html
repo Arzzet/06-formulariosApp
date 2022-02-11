@@ -1,1 +1,103 @@
-<p>switches works!</p>
+<h2>Reactive: <small>Switches</small></h2>
+<hr>
+
+<form>
+    <!-- radio -->
+    <div class="row mt-3">
+        <label class="col-sm-3 col-form-label">Género</label>
+        <div class="col-sm-9">
+
+            <div class="form-check">
+                <input class="form-check-input" 
+                       type="radio" 
+                       value="M"
+                       name="radiogenero"
+                       id="radioMasculino">
+                <label class="form-check-label" for="exampleRadios1">
+                    Masculino
+                </label>
+            </div>
+              
+            <div class="form-check">
+                <input class="form-check-input" 
+                        type="radio" 
+                        value="F"
+                        name="radiogenero"
+                        id="radioFemenino">
+                <label class="form-check-label" for="exampleRadios2">
+                    Femenino
+                </label>
+            </div>
+
+            <div class="form-check disabled">
+                <input class="form-check-input" 
+                        type="radio"
+                        name="radiogenero" 
+                        id="exampleRadios3" 
+                        value="option3">
+                <label class="form-check-label" for="exampleRadios3">
+                    Apache
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- switch -->
+    <div class="row mt-3">
+        <label class="col-sm-3 col-form-label">Notificaciones</label>
+        <div class="col-sm-9">
+            <div class="form-check form-switch mt-2">
+                <input type="checkbox" 
+                        id="flexSwitchCheckChecked" 
+                        class="form-check-input" 
+                        checked>
+                <label for="flexSwitchCheckChecked" 
+                        class="form-check-label">
+                    Quiero recibir notificaciones
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- check -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Términos</label>
+        <div class="col-sm-9">
+            <div class="custom-control custom-checkbox mt-2">
+                <input type="checkbox"
+                        class="custom-control-input" 
+                        id="customCheck1">
+                <label class="custom-control-label" 
+                        for="customCheck1">
+                    Términos y condiciones de uso
+                </label>
+              </div>
+        </div>
+    </div>
+
+    <!-- submit -->
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary float-end">
+                Guardar
+            </button>
+        </div>
+    </div>
+</form>
+
+<!-- <h5>Valor del formulario</h5>
+<pre>{{miFormulario.value | json }}</pre>
+<br>
+
+<h5>Friden</h5>
+<pre>{{friden | json }}</pre>
+<br>
+
+<h5>Valid</h5>
+<pre>{{miFormulario.valid}}</pre>
+
+<h5>Términos</h5>
+<pre>{{miFormulario.controls?.terminos?.errors | json}}</pre>
+<br>
+<pre>Condiciones: </pre> -->
+
