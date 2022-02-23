@@ -31,10 +31,22 @@
                            class="form-control" 
                            formControlName="email"
                            placeholder="Email del usuario">
-                    <span class="form-text text-danger"
-                           *ngIf="campoNoValido('email')">
+                    <!-- <span class="form-text text-danger"
+                           *ngIf="emailRequired()">
                          El correo es obligatorio
-                     </span>
+                    </span>
+                    <span class="form-text text-danger"
+                           *ngIf="emailFormato()">
+                        El formato no es correcto
+                    </span>
+                    <span class="form-text text-danger"
+                           *ngIf="emailExiste()">
+                        El correo ya existe
+                    </span> -->
+                    <span class="form-text text-danger"
+                          *ngIf="campoNoValido('email')">
+                        {{ emailErrorMsg }}
+                    </span>
                     
                 </div>
             </div>
@@ -61,7 +73,12 @@
                 <div class="col-sm-9">
                     <input type="password" 
                            class="form-control" 
+                           formControlName="password"
                            placeholder="Password de su cuenta">
+                    <span class="form-text text-danger"
+                           *ngIf="campoNoValido('password')">
+                        El password debe de tener más de 6 caracteres
+                    </span>
                     
                 </div>
             </div>
@@ -72,14 +89,20 @@
                 <div class="col-sm-9">
                     <input type="password" 
                            class="form-control" 
+                           formControlName="password2"
                            placeholder="Confirmar password">
-                    
+                    <span class="form-text text-danger"
+                           *ngIf="campoNoValido('password2')">
+                        Los passwords deben coincidir
+                    </span>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <button type="submit" class="btn btn-primary float-end">
+                    <button type="submit" 
+                            class="btn btn-primary float-end"
+                            [disabled]="miFormulario.pending">
                         Crear
                     </button>
                 </div>
@@ -89,9 +112,16 @@
 </div>
 
 <h2>Form Valid: {{miFormulario.valid}}</h2>
+<h2>Form Status: {{miFormulario.status}}</h2>
+<h2>Form errors</h2>
+<pre>{{miFormulario.errors | json}}</pre>
 <h4>Nombre</h4>
 <pre>{{miFormulario.controls.nombre.errors | json}}</pre>
 <h4>Email</h4>
 <pre>{{miFormulario.controls.email.errors | json}}</pre>
 <h4>Username</h4>
 <pre>{{miFormulario.controls.username.errors | json}}</pre>
+<h4>Password</h4>
+<pre>{{miFormulario.controls.password.errors | json}}</pre>
+<h4>password2</h4>
+<pre>{{miFormulario.controls.password2.errors | json}}</pre>
